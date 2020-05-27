@@ -11,6 +11,7 @@ import PantsContainer from './components/collections/Pants/PantsContainer'
 import ShirtsContainer from './components/collections/Shirts/ShirtsContainer'
 import TshirtsContainer from './components/collections/Tshirts/TshirtsContainer'
 import ShortsContainer from './components/collections/Shorts/ShortsContainer'
+import ProductPage from './components/common/ProductPage/ProductPage'
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Navbar />
             </div>
             <div className='contentWrapper'>
-              <Redirect from='/' to='home' />
+              {/* <Redirect from='/' to='home' /> */}
               <Route name='home' path='/home' render={() => <Home />} />
               <Route
                 path='/accessories'
@@ -34,6 +35,7 @@ function App() {
               <Route path='/shirts' render={() => <ShirtsContainer />} />
               <Route path='/t-shirts' render={() => <TshirtsContainer />} />
               <Route path='/shorts' render={() => <ShortsContainer />} />
+              <Route path='/product' render={() => <ProductPage />} />
             </div>
           </div>
           <Footer />
