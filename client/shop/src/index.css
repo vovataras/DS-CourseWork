@@ -34,7 +34,20 @@ a {
 }
 
 .wrapper {
-  max-width: 1220px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 30px;
+}
+
+.center {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navWrapper {
+  width: 18%;
+}
+
+.contentWrapper {
+  width: 80%;
 }
