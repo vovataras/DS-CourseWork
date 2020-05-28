@@ -13,7 +13,7 @@ const initialState = {
     },
     {
       id: '00002',
-      name: 'Rocco Flat Peak Cap - Fatigue',
+      name: 'Raider Beanie - Navy',
       price: '399.95',
       color: ['fatigue'],
       size: ['OSFA'],
@@ -24,73 +24,7 @@ const initialState = {
     },
     {
       id: '00003',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00001',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00002',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00003',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00001',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00002',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
-      color: ['fatigue'],
-      size: ['OSFA'],
-      images: [
-        'https://freesvg.org/img/Placeholder.png',
-        'https://freesvg.org/img/Placeholder.png',
-      ],
-    },
-    {
-      id: '00003',
-      name: 'Rocco Flat Peak Cap - Fatigue',
+      name: 'Hunter Baseball Cap - Olive',
       price: '399.95',
       color: ['fatigue'],
       size: ['OSFA'],
@@ -103,8 +37,8 @@ const initialState = {
   footwear: [
     {
       id: '10001',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
+      name: 'Suede Combat Boots - Stone',
+      price: '1799.95',
       color: ['fatigue'],
       size: ['OSFA'],
       images: [
@@ -114,8 +48,8 @@ const initialState = {
     },
     {
       id: '10002',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
+      name: 'Tyco Sneaker - Black',
+      price: '1299.95 ',
       color: ['fatigue'],
       size: ['OSFA'],
       images: [
@@ -125,8 +59,8 @@ const initialState = {
     },
     {
       id: '10003',
-      name: 'Rocco Flat Peak Cap - Fatigue',
-      price: '399.95',
+      name: 'Farai Desert Boot - Sand',
+      price: '1599.95',
       color: ['fatigue'],
       size: ['OSFA'],
       images: [
@@ -276,6 +210,5 @@ const initialState = {
     },
   ],
 }
-
 
 export default initialState
