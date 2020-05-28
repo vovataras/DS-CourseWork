@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Home.module.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import ProductItem from '../common/ProductItem/ProductItem'
 import PageItem from './PageItem/PageItem'
 
@@ -26,12 +26,24 @@ const Home = () => {
       <div>
         <h2>Дозвольте вашому стилю відповідати вашим амбіціям!</h2>
         <div className={classes.pagesContainer}>
-          <PageItem image={imgLink} name="Аксесуари" />
-          <PageItem image={imgLink} name="Взуття" />
-          <PageItem image={imgLink} name="Штани" />
-          <PageItem image={imgLink} name="Сорочки" />
-          <PageItem image={imgLink} name="Футболки" />
-          <PageItem image={imgLink} name="Шорти" />
+          <Link to='/accessories'>
+            <PageItem image={imgLink} name='Аксесуари' />
+          </Link>
+          <Link to='/footwear'>
+            <PageItem image={imgLink} name='Взуття' />
+          </Link>
+          <Link to='/pants'>
+            <PageItem image={imgLink} name='Штани' />
+          </Link>
+          <Link to='/shirts'>
+            <PageItem image={imgLink} name='Сорочки' />
+          </Link>
+          <Link to='/tshirts'>
+            <PageItem image={imgLink} name='Футболки' />
+          </Link>
+          <Link to='/shorts'>
+            <PageItem image={imgLink} name='Шорти' />
+          </Link>
         </div>
       </div>
     </div>

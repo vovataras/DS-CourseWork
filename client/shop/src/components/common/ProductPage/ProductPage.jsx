@@ -9,11 +9,11 @@ const ProductPage = (props) => {
     <div className={classes.productPage}>
       <div className={classes.firstRow}>
         <div className={classes.images}>
-          <img src={imgLink} alt='' />
+          <img src={props.product.images[0]} alt={props.product.name + ' image'} />
         </div>
         <div className={classes.info}>
           <h2>{props.product.name}</h2>
-          <div className={classes.price}>${props.product.price}</div>
+          <div className={classes.price}>₴{props.product.price}</div>
           <div className={classes.form}>
             <div className={classes.options}>
               <div className={classes.color}>

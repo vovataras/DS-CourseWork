@@ -31,7 +31,12 @@
   margin-bottom: 3rem;
 }
 
+.pagesContainer a {
+  /* display: block; */
+}
+
 .pageItem {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
