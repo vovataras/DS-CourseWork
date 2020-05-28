@@ -12,6 +12,7 @@ import ShirtsContainer from './components/collections/Shirts/ShirtsContainer'
 import TshirtsContainer from './components/collections/Tshirts/TshirtsContainer'
 import ShortsContainer from './components/collections/Shorts/ShortsContainer'
 import ProductPage from './components/common/ProductPage/ProductPage'
+import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
 
 function App() {
   return (
@@ -27,15 +28,28 @@ function App() {
               {/* <Redirect exact from='/' to='home' /> */}
               <Route name='home' path='/home' render={() => <Home />} />
               <Route
+                exact
                 path='/accessories'
                 render={() => <AccessoriesContainer />}
               />
-              <Route path='/footwear' render={() => <FootwearContainer />} />
-              <Route path='/pants' render={() => <PantsContainer />} />
-              <Route path='/shirts' render={() => <ShirtsContainer />} />
-              <Route path='/t-shirts' render={() => <TshirtsContainer />} />
-              <Route path='/shorts' render={() => <ShortsContainer />} />
-              {/* <Route path='/product/:id' render={() => <ProductPage />} /> */}
+              <Route
+                exact
+                path='/footwear'
+                render={() => <FootwearContainer />}
+              />
+              <Route exact path='/pants' render={() => <PantsContainer />} />
+              <Route exact path='/shirts' render={() => <ShirtsContainer />} />
+              <Route
+                exact
+                path='/tshirts'
+                render={() => <TshirtsContainer />}
+              />
+              <Route exact path='/shorts' render={() => <ShortsContainer />} />
+              <Route
+                exact
+                path='/:category/product/:productId'
+                render={() => <ProductPageContainer />}
+              />
             </div>
           </div>
           <Footer />

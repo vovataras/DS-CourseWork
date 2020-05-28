@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 let mapStateToProps = (state) => {
   return {
     title: 'Футболки',
+    category: 'tshirts',
     state: state.collections.tshirts,
   }
 }

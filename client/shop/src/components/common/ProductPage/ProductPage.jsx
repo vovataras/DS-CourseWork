@@ -12,8 +12,8 @@ const ProductPage = (props) => {
           <img src={imgLink} alt='' />
         </div>
         <div className={classes.info}>
-          <h2>Product Name</h2>
-          <div className={classes.price}>$1999.99</div>
+          <h2>{props.product.name}</h2>
+          <div className={classes.price}>${props.product.price}</div>
           <div className={classes.form}>
             <div className={classes.options}>
               <div className={classes.color}>

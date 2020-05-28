@@ -31,7 +31,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/t-shirts' activeClassName={classes.active}>
+          <NavLink to='/tshirts' activeClassName={classes.active}>
             Футболки
           </NavLink>
         </div>
