@@ -24,7 +24,7 @@ function App() {
               <Navbar />
             </div>
             <div className='contentWrapper'>
-              {/* <Redirect from='/' to='home' /> */}
+              {/* <Redirect exact from='/' to='home' /> */}
               <Route name='home' path='/home' render={() => <Home />} />
               <Route
                 path='/accessories'
@@ -35,7 +35,7 @@ function App() {
               <Route path='/shirts' render={() => <ShirtsContainer />} />
               <Route path='/t-shirts' render={() => <TshirtsContainer />} />
               <Route path='/shorts' render={() => <ShortsContainer />} />
-              <Route path='/product' render={() => <ProductPage />} />
+              {/* <Route path='/product/:id' render={() => <ProductPage />} /> */}
             </div>
           </div>
           <Footer />

@@ -1,8 +1,13 @@
-import React from 'react'
 import Products from '../../common/Products/Products'
+import { connect } from 'react-redux'
 
-const AccessoriesContainer = () => {
-  return <Products title='Аксесуари' />
+let mapStateToProps = (state) => {
+  return {
+    title: 'Аксесуари',
+    state: state.collections.accessories,
+  }
 }
+
+const AccessoriesContainer = connect(mapStateToProps)(Products)
 
 export default AccessoriesContainer

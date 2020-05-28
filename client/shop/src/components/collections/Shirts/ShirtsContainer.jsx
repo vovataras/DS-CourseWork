@@ -1,8 +1,13 @@
-import React from 'react'
 import Products from '../../common/Products/Products'
+import { connect } from 'react-redux'
 
-const ShirtsContainer = () => {
-  return <Products title='Cорочки' />
+let mapStateToProps = (state) => {
+  return {
+    title: 'Cорочки',
+    state: state.collections.shirts,
+  }
 }
+
+const ShirtsContainer = connect(mapStateToProps)(Products)
 
 export default ShirtsContainer
