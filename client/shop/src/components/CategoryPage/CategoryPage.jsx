@@ -1,5 +1,5 @@
 import React from 'react'
-// import classes from './Products.module.css'
+// import classes from './CategoryPage.module.css'
 import Products from '../common/Products/Products'
 
 const CategoryPage = (props) => {
