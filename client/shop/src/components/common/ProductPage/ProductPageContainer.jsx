@@ -4,6 +4,9 @@ import ProductPage from './ProductPage'
 import { connect } from 'react-redux'
 
 class ProductPageContainer extends React.Component {
+
+  
+
   render() {
     // debugger
     let category = this.props.match.params.category

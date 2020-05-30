@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Navbar.module.css'
 import { NavLink } from 'react-router-dom'
+import {path} from '../../paths'
 
 const Navbar = () => {
   return (
@@ -11,32 +12,32 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/accessories' activeClassName={classes.active}>
+          <NavLink to={path.accessories} activeClassName={classes.active}>
             Аксесуари
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/footwear' activeClassName={classes.active}>
+          <NavLink to={path.footwear} activeClassName={classes.active}>
             Взуття
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/pants' activeClassName={classes.active}>
+          <NavLink to={path.pants} activeClassName={classes.active}>
             Штани
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/shirts' activeClassName={classes.active}>
+          <NavLink to={path.shirts} activeClassName={classes.active}>
             Сорочки
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/tshirts' activeClassName={classes.active}>
+          <NavLink to={path.tshirts} activeClassName={classes.active}>
             Футболки
           </NavLink>
         </div>
         <div className={classes.item}>
-          <NavLink to='/shorts' activeClassName={classes.active}>
+          <NavLink to={path.shorts} activeClassName={classes.active}>
             Шорти
           </NavLink>
         </div>

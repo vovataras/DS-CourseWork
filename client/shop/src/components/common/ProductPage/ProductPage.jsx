@@ -24,7 +24,7 @@ const ProductPage = (props) => {
                 </select>
               </div> */}
               <div className={classes.size}>
-                <label for='size'>Розмір</label>
+                <label forName='size'>Розмір</label>
                 <select id='size' name='size'>
                   <option value='Small'>Small</option>
                   <option value='Medium'>Medium</option>

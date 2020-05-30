@@ -13,6 +13,8 @@ import TshirtsContainer from './components/collections/Tshirts/TshirtsContainer'
 import ShortsContainer from './components/collections/Shorts/ShortsContainer'
 import ProductPage from './components/common/ProductPage/ProductPage'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
+import ProductsContainer from './components/common/Products/ProductsContainer'
+import { path } from './paths'
 
 function App() {
   return (
@@ -25,26 +27,49 @@ function App() {
               <Navbar />
             </div>
             <div className='contentWrapper'>
-              {/* <Redirect exact from='/' to='home' /> */}
-              <Route name='home' path='/home' render={() => <Home />} />
               <Route
                 exact
-                path='/accessories'
+                name='dashboard'
+                path='/'
+                render={() => <Redirect to={path.home} />}
+              />
+              <Route exact name='home' path={path.home} render={() => <Home />} />
+              <Route
+                exact
+                path={path.products}
+                render={() => <ProductsContainer />}
+              />
+              <Route
+                exact
+                path={path.accessories}
                 render={() => <AccessoriesContainer />}
               />
+
               <Route
                 exact
-                path='/footwear'
+                path={path.footwear}
                 render={() => <FootwearContainer />}
               />
-              <Route exact path='/pants' render={() => <PantsContainer />} />
-              <Route exact path='/shirts' render={() => <ShirtsContainer />} />
               <Route
                 exact
-                path='/tshirts'
+                path={path.pants}
+                render={() => <PantsContainer />}
+              />
+              <Route
+                exact
+                path={path.shirts}
+                render={() => <ShirtsContainer />}
+              />
+              <Route
+                exact
+                path={path.tshirts}
                 render={() => <TshirtsContainer />}
               />
-              <Route exact path='/shorts' render={() => <ShortsContainer />} />
+              <Route
+                exact
+                path={path.shorts}
+                render={() => <ShortsContainer />}
+              />
               <Route
                 exact
                 path='/:category/product/:productId'
