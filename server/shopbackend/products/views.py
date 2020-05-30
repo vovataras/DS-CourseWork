@@ -5,7 +5,51 @@ from rest_framework import viewsets
 from .serializers import ProductSerializer
 
 
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all().order_by('product_id')
-    serializer_class = ProductSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+# class ProductViewSet(viewsets.ModelViewSet):
+#     queryset = Product.objects.all().order_by('product_id')
+#     serializer_class = ProductSerializer
+#     http_method_names = ['get', 'head']
+#     # permission_classes = [permissions.IsAuthenticated]
+
+
+
+from django.http import Http404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+
+
+class ProductList(APIView):
+    """
+    List all snippets, or create a new snippet.
+    """
+    def get(self, request, format=None):
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
+
+
+class ProductDetail(APIView):
+    """
+    Retrieve, update or delete a snippet instance.
+    """
+    def get_object(self, pk):
+        try:
+            return Product.objects.get(pk=pk)
+        except Product.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        product = self.get_object(pk)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+
+
+class ProductListByCategory(APIView):
+    """
+    List all snippets, or create a new snippet.
+    """
+    def get(self, request, category,format=None):
+        products = Product.objects.filter(category=category)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)

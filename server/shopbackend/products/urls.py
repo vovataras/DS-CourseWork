@@ -17,10 +17,9 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
-router = routers.DefaultRouter()
-router.register('products', views.ProductViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', views.ProductList.as_view()),
+    path('product/<int:pk>/', views.ProductDetail.as_view()),
+    path('category/<str:category>/', views.ProductListByCategory.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
