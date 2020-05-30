@@ -20,9 +20,6 @@ from rest_framework import status
 
 
 class ProductList(APIView):
-    """
-    List all snippets, or create a new snippet.
-    """
     def get(self, request, format=None):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
@@ -30,9 +27,6 @@ class ProductList(APIView):
 
 
 class ProductDetail(APIView):
-    """
-    Retrieve, update or delete a snippet instance.
-    """
     def get_object(self, pk):
         try:
             return Product.objects.get(pk=pk)
@@ -46,9 +40,6 @@ class ProductDetail(APIView):
 
 
 class ProductListByCategory(APIView):
-    """
-    List all snippets, or create a new snippet.
-    """
     def get(self, request, category,format=None):
         products = Product.objects.filter(category=category)
         serializer = ProductSerializer(products, many=True)
