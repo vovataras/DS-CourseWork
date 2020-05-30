@@ -14,6 +14,7 @@ import ShortsContainer from './components/collections/Shorts/ShortsContainer'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
 // import ProductsContainer from './components/common/Products/ProductsContainer'
 import { path } from './paths'
+import CategoryPageContainer from './components/CategoryPage/CategoryPageContainer'
 
 function App() {
   return (
@@ -38,11 +39,11 @@ function App() {
                 path={path.home}
                 render={() => <Home />}
               />
-              {/* <Route
+              <Route
                 exact
                 path={path.products}
-                render={() => <ProductsContainer />}
-              /> */}
+                render={() => <CategoryPageContainer />}
+              />
               <Route
                 exact
                 path={path.accessories}
