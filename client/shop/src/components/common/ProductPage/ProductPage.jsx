@@ -17,7 +17,7 @@ const ProductPage = (props) => {
           <div className={classes.form}>
             <div className={classes.options}>
               {/* <div className={classes.color}>
-                <label for='color'>Колір</label>
+                <label forName='color'>Колір</label>
                 <select id='color' name='color'>
                   <option value='1'>Color 1</option>
                   <option value='2'>Color 2</option>

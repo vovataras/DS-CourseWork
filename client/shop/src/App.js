@@ -42,37 +42,42 @@ function App() {
               <Route
                 exact
                 path={path.products}
-                render={() => <CategoryPageContainer />}
+                render={() => <CategoryPageContainer title='Всі продукти' />}
               />
               <Route
                 exact
                 path={path.accessories}
-                render={() => <AccessoriesContainer />}
+                render={() => (
+                  <CategoryPageContainer
+                    title='Аксесуари'
+                    category='accessories'
+                  />
+                )}
               />
               <Route
                 exact
                 path={path.footwear}
-                render={() => <FootwearContainer />}
+                render={() => <CategoryPageContainer title='Взуття' />}
               />
               <Route
                 exact
                 path={path.pants}
-                render={() => <PantsContainer />}
+                render={() => <CategoryPageContainer title='Штани' />}
               />
               <Route
                 exact
                 path={path.shirts}
-                render={() => <ShirtsContainer />}
+                render={() => <CategoryPageContainer title='Сорочки' />}
               />
               <Route
                 exact
                 path={path.tshirts}
-                render={() => <TshirtsContainer />}
+                render={() => <CategoryPageContainer title='Футболки' />}
               />
               <Route
                 exact
                 path={path.shorts}
-                render={() => <ShortsContainer />}
+                render={() => <CategoryPageContainer title='Шорти' />}
               />
               <Route
                 exact

@@ -1,7 +1,7 @@
 const initialState = {
   accessories: [
     {
-      id: '00001',
+      id: '1',
       name: 'Rocco Flat Peak Cap - Fatigue',
       price: '399.95',
       color: ['fatigue'],
