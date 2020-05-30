@@ -7,6 +7,7 @@ export const path = {
   shirts: '/products/shirts',
   tshirts: '/products/tshirts',
   shorts: '/products/shorts',
+  productPage: '/products/:category/:productId',
 }
 
 

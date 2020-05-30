@@ -11,9 +11,8 @@ import PantsContainer from './components/collections/Pants/PantsContainer'
 import ShirtsContainer from './components/collections/Shirts/ShirtsContainer'
 import TshirtsContainer from './components/collections/Tshirts/TshirtsContainer'
 import ShortsContainer from './components/collections/Shorts/ShortsContainer'
-import ProductPage from './components/common/ProductPage/ProductPage'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
-import ProductsContainer from './components/common/Products/ProductsContainer'
+// import ProductsContainer from './components/common/Products/ProductsContainer'
 import { path } from './paths'
 
 function App() {
@@ -33,18 +32,22 @@ function App() {
                 path='/'
                 render={() => <Redirect to={path.home} />}
               />
-              <Route exact name='home' path={path.home} render={() => <Home />} />
               <Route
+                exact
+                name='home'
+                path={path.home}
+                render={() => <Home />}
+              />
+              {/* <Route
                 exact
                 path={path.products}
                 render={() => <ProductsContainer />}
-              />
+              /> */}
               <Route
                 exact
                 path={path.accessories}
                 render={() => <AccessoriesContainer />}
               />
-
               <Route
                 exact
                 path={path.footwear}
@@ -72,7 +75,7 @@ function App() {
               />
               <Route
                 exact
-                path='/:category/product/:productId'
+                path={path.productPage}
                 render={() => <ProductPageContainer />}
               />
             </div>
