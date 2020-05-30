@@ -57,27 +57,27 @@ function App() {
               <Route
                 exact
                 path={path.footwear}
-                render={() => <CategoryPageContainer title='Взуття' />}
+                render={() => <CategoryPageContainer title='Взуття' category='footwear'/>}
               />
               <Route
                 exact
                 path={path.pants}
-                render={() => <CategoryPageContainer title='Штани' />}
+                render={() => <CategoryPageContainer title='Штани' category='pants'/>}
               />
               <Route
                 exact
                 path={path.shirts}
-                render={() => <CategoryPageContainer title='Сорочки' />}
+                render={() => <CategoryPageContainer title='Сорочки' category='shirts'/>}
               />
               <Route
                 exact
                 path={path.tshirts}
-                render={() => <CategoryPageContainer title='Футболки' />}
+                render={() => <CategoryPageContainer title='Футболки' category='tshirts'/>}
               />
               <Route
                 exact
                 path={path.shorts}
-                render={() => <CategoryPageContainer title='Шорти' />}
+                render={() => <CategoryPageContainer title='Шорти' category='shorts'/>}
               />
               <Route
                 exact

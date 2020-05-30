@@ -10,17 +10,18 @@ class CategoryPageContainer extends React.Component {
     this.state = {data: []}
 
     if(this.props.category) {
-      this.api_url += 'category/' + this.props.category
+      this.api_url =  this.api_url + 'category/' + this.props.category + '/'
     }
   }
 
   // category = this.props.category
   componentDidMount() {
-    axios.get('http://127.0.0.1:8000/products/')
+    axios.get(this.api_url)
       .then((response) => {
         this.setState({
           data: response.data
       })
+      console.log(response)
     })
     
   }
