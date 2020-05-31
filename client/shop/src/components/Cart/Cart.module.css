@@ -16,3 +16,15 @@
   padding-top: 0.6rem;
   margin-bottom: 2rem;
 }
+
+.emptyCart {
+  text-align: start;
+}
+
+.emptyCart a {
+  text-decoration: underline;
+}
+
+.emptyCart a:hover {
+  opacity: 0.8;
+}

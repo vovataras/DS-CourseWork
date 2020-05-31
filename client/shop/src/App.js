@@ -35,7 +35,7 @@ function App() {
               />
               <Route
                 exact
-                path='/cart'
+                path={path.cart}
                 render={() => <Cart />}
               />
               <Route

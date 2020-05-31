@@ -8,6 +8,7 @@ export const path = {
   tshirts: '/products/tshirts',
   shorts: '/products/shorts',
   productPage: '/products/:category/:productId',
+  cart: '/cart',
 }
 
 
