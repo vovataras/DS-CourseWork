@@ -13,7 +13,7 @@
 }
 
 .images {
-  width: 49%;
+  width: 48%;
 }
 
 .info {
@@ -99,5 +99,5 @@
   text-align: justify;
   font-size: 0.9rem;
   line-height: 1.5rem;
-  margin: 3rem 0;
+  /* margin: 3rem 0; */
 }

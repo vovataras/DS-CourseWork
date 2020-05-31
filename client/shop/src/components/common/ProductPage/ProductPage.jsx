@@ -9,7 +9,7 @@ const ProductPage = (props) => {
     <div className={classes.productPage}>
       <div className={classes.firstRow}>
         <div className={classes.images}>
-          <img src={props.product.images[0]} alt={props.product.name + ' image'} />
+          <img src={props.product.image} alt={props.product.name + ' image'} />
         </div>
         <div className={classes.info}>
           <h2>{props.product.name}</h2>
@@ -41,20 +41,7 @@ const ProductPage = (props) => {
         </div>
       </div>
       <div className={classes.secondRow}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aut
-          asperiores quidem, aliquam quae consequatur fugit deserunt debitis
-          veritatis optio sunt ipsam adipisci odit alias incidunt necessitatibus
-          consequuntur suscipit facilis natus eius iste magni beatae recusandae?
-          Cumque debitis nulla et odit ab obcaecati, reiciendis, delectus
-          laboriosam odio earum voluptas iusto facere fuga consequatur
-          temporibus architecto ex itaque. Tempora tempore eveniet vel nihil at
-          modi, voluptatem, odio deleniti debitis ducimus sint explicabo
-          mollitia, voluptatum dignissimos quae nostrum cupiditate optio! Odit
-          obcaecati, corrupti assumenda dicta molestiae doloribus sapiente
-          aperiam ad dolorum hic eius sed pariatur placeat autem architecto.
-          Laborum illo accusamus obcaecati?
-        </p>
+        <p>{props.product.description}</p>
       </div>
     </div>
   )
