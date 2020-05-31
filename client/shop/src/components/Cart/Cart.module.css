@@ -28,3 +28,136 @@
 .emptyCart a:hover {
   opacity: 0.8;
 }
+
+
+
+.productsHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-align: end;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.productH {
+  width: 55%;
+  text-align: start;
+}
+.priceH {
+  width: 15%;
+}
+.quantityH {
+  width: 15%;
+}
+.totalH {
+  width: 15%;
+}
+
+
+
+.productsContainer > div {
+  margin-bottom: 1.5rem;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.itemImage {
+  width: 20%;
+  text-align: start;
+}
+
+.itemDescription {
+  width: 35%;
+  padding: 1rem;
+  text-align: start;
+  font-size: 0.8rem;
+}
+.itemDescription h4{
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.itemPrice {
+  width: 15%;
+}
+.itemQuantity {
+  width: 15%;
+}
+.itemTotal {
+  width: 15%;
+}
+
+
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.comment {
+  width: 49%;
+  text-align: start;
+  font-size: 0.8rem;
+}
+
+.comment textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 150px;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #f4f4f4;
+  border: none;
+  padding: 0.5rem;
+}
+
+.bill {
+  width: 49%;
+  text-align: end;
+}
+
+.totalPrice {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.buttons a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border: solid 2px #333;
+}
+
+.buttons a:hover {
+  opacity: 0.8;
+}
+
+.btnContinue {
+  background-color: #FFF;
+  color: #333;
+}
+
+.btnCheckOut {
+  background-color: #333;
+  color: #FFF;
+}
