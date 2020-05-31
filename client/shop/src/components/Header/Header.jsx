@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Header.module.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,14 +13,16 @@ const Header = () => {
           <span>Search</span>
         </div>
         <div className={classes.cart}>
-          <FontAwesomeIcon icon={faShoppingCart} />
-        <span>Cart(0)</span>
+          <Link to='/cart'>
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span>Кошик (0)</span>
+          </Link>
         </div>
       </div>
       <div className={classes.headerLogo}>
-        <NavLink to='/home' activeClassName={classes.active}>
+        <Link to='/home'>
           <h1>Просто.</h1>
-        </NavLink>
+        </Link>
       </div>
     </header>
   )

@@ -8,6 +8,7 @@ import HomeContainer from './components/Home/HomeContainer'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
 import CategoryPageContainer from './components/CategoryPage/CategoryPageContainer'
 import { path } from './paths'
+import Cart from './components/Cart/Cart'
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
                 name='home'
                 path={path.home}
                 render={() => <HomeContainer />}
+              />
+              <Route
+                exact
+                path='/cart'
+                render={() => <Cart />}
               />
               <Route
                 exact
