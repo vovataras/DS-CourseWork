@@ -30,10 +30,10 @@ const Cart = (props) => {
         <div className={classes.cartFooter}>
           <div className={classes.comment}>
             <div>
-              <label name='comment'>Спеціальні інструкції для продавця</label>
+              <label htmlFor='comment'>Спеціальні інструкції для продавця</label>
             </div>
             <div>
-              <textarea name='comment'></textarea>
+              <textarea id='comment'></textarea>
             </div>
           </div>
           <div className={classes.bill}>

@@ -111,6 +111,10 @@
   font-size: 0.8rem;
 }
 
+.comment label:hover {
+  cursor: pointer;
+}
+
 .comment textarea {
   width: 100%;
   max-width: 100%;
