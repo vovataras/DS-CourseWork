@@ -1,27 +1,17 @@
 import React from 'react'
 import classes from './Home.module.css'
-import { NavLink, Link } from 'react-router-dom'
-import ProductItem from '../common/ProductItem/ProductItem'
+import { Link } from 'react-router-dom'
+import Products from '../common/Products/Products'
 import PageItem from './PageItem/PageItem'
 
-const Home = () => {
+const Home = (props) => {
   let imgLink = 'https://freesvg.org/img/Placeholder.png'
 
   return (
     <div className={classes.home}>
       <div>
         <h2>Рекомендована колекція</h2>
-        <div className={classes.productsContainer}>
-          <ProductItem image={imgLink} name='Name1' price='999$' />
-          <ProductItem image={imgLink} name='Name2' price='999$' />
-          <ProductItem image={imgLink} name='Name3' price='999$' />
-          <ProductItem image={imgLink} name='Name4' price='899$' />
-          <ProductItem image={imgLink} name='Name5' price='799$' />
-          <ProductItem image={imgLink} name='Name6' price='499$' />
-          <ProductItem image={imgLink} name='Name7' price='599$' />
-          <ProductItem image={imgLink} name='Name8' price='399$' />
-          <ProductItem image={imgLink} name='Name9' price='299$' />
-        </div>
+        <Products state={props.state} />
       </div>
       <div>
         <h2>Дозвольте вашому стилю відповідати вашим амбіціям!</h2>

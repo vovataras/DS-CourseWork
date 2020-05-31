@@ -2,19 +2,12 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar'
-import { Route, BrowserRouter, Redirect } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
-import Home from './components/Home/Home'
-import AccessoriesContainer from './components/collections/Accessories/AccessoriesContainer'
-import FootwearContainer from './components/collections/Footwear/FootwearContainer'
-import PantsContainer from './components/collections/Pants/PantsContainer'
-import ShirtsContainer from './components/collections/Shirts/ShirtsContainer'
-import TshirtsContainer from './components/collections/Tshirts/TshirtsContainer'
-import ShortsContainer from './components/collections/Shorts/ShortsContainer'
+import { Route, BrowserRouter, Redirect } from 'react-router-dom'
+import HomeContainer from './components/Home/HomeContainer'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
-// import ProductsContainer from './components/common/Products/ProductsContainer'
-import { path } from './paths'
 import CategoryPageContainer from './components/CategoryPage/CategoryPageContainer'
+import { path } from './paths'
 
 function App() {
   return (
@@ -37,12 +30,12 @@ function App() {
                 exact
                 name='home'
                 path={path.home}
-                render={() => <Home />}
+                render={() => <HomeContainer />}
               />
               <Route
                 exact
                 path={path.products}
-                render={() => <CategoryPageContainer title='Всі продукти' />}
+                render={() => <CategoryPageContainer title='Всі товари' />}
               />
               <Route
                 exact
@@ -57,27 +50,37 @@ function App() {
               <Route
                 exact
                 path={path.footwear}
-                render={() => <CategoryPageContainer title='Взуття' category='footwear'/>}
+                render={() => (
+                  <CategoryPageContainer title='Взуття' category='footwear' />
+                )}
               />
               <Route
                 exact
                 path={path.pants}
-                render={() => <CategoryPageContainer title='Штани' category='pants'/>}
+                render={() => (
+                  <CategoryPageContainer title='Штани' category='pants' />
+                )}
               />
               <Route
                 exact
                 path={path.shirts}
-                render={() => <CategoryPageContainer title='Сорочки' category='shirts'/>}
+                render={() => (
+                  <CategoryPageContainer title='Сорочки' category='shirts' />
+                )}
               />
               <Route
                 exact
                 path={path.tshirts}
-                render={() => <CategoryPageContainer title='Футболки' category='tshirts'/>}
+                render={() => (
+                  <CategoryPageContainer title='Футболки' category='tshirts' />
+                )}
               />
               <Route
                 exact
                 path={path.shorts}
-                render={() => <CategoryPageContainer title='Шорти' category='shorts'/>}
+                render={() => (
+                  <CategoryPageContainer title='Шорти' category='shorts' />
+                )}
               />
               <Route
                 exact

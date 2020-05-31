@@ -1,12 +1,9 @@
 import React from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import ProductPage from './ProductPage'
 import { connect } from 'react-redux'
 
 class ProductPageContainer extends React.Component {
-
-  
-
   render() {
     // debugger
     let category = this.props.match.params.category

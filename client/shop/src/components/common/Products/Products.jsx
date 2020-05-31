@@ -5,8 +5,7 @@ import ProductItem from '../ProductItem/ProductItem'
 
 const Products = (props) => {
   let ProductItems = props.state.map((p) => (
-    <Link to={'/products/' + p.category + '/' + p.product_id }>
-    {/* <Link to={'/' + props.category + '/product/' + p.id}> */}
+    <Link to={'/products/' + p.category + '/' + p.product_id } key={p.product_id}>
       <ProductItem
         image={p.image}
         name={p.name}
