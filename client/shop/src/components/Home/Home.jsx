@@ -3,6 +3,7 @@ import classes from './Home.module.css'
 import { Link } from 'react-router-dom'
 import Products from '../common/Products/Products'
 import PageItem from './PageItem/PageItem'
+import { path } from '../../paths'
 
 const Home = (props) => {
   let imgLink = 'https://freesvg.org/img/Placeholder.png'
@@ -16,22 +17,22 @@ const Home = (props) => {
       <div>
         <h2>Дозвольте вашому стилю відповідати вашим амбіціям!</h2>
         <div className={classes.pagesContainer}>
-          <Link to='/accessories'>
+          <Link to={path.accessories}>
             <PageItem image={imgLink} name='Аксесуари' />
           </Link>
-          <Link to='/footwear'>
+          <Link to={path.footwear}>
             <PageItem image={imgLink} name='Взуття' />
           </Link>
-          <Link to='/pants'>
+          <Link to={path.pants}>
             <PageItem image={imgLink} name='Штани' />
           </Link>
-          <Link to='/shirts'>
+          <Link to={path.shirts}>
             <PageItem image={imgLink} name='Сорочки' />
           </Link>
-          <Link to='/tshirts'>
+          <Link to={path.tshirts}>
             <PageItem image={imgLink} name='Футболки' />
           </Link>
-          <Link to='/shorts'>
+          <Link to={path.shorts}>
             <PageItem image={imgLink} name='Шорти' />
           </Link>
         </div>
