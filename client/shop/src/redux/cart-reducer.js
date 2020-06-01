@@ -1,6 +1,7 @@
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const UPDATE_PRODUCT_QUANTITY = 'UPDATE_PRODUCT_QUANTITY'
+const UPDATE_COMMENT = 'UPDATE_COMMENT'
 
 let initialState = {
   products: [],
@@ -80,6 +81,11 @@ const cartReducer = (state = initialState, action) => {
 
       return newState
     }
+    case UPDATE_COMMENT:
+      return {
+        ...state,
+        comment: action.newComment,
+      }
     default:
       return state
   }
@@ -109,6 +115,10 @@ export const updateProductQuantityCreator = (unique_id, quantity) => ({
   type: UPDATE_PRODUCT_QUANTITY,
   unique_id: unique_id,
   newQuantity: quantity,
+})
+export const updateCommentCreator = (newComment) => ({
+  type: UPDATE_PRODUCT_QUANTITY,
+  newComment: newComment,
 })
 
 export default cartReducer

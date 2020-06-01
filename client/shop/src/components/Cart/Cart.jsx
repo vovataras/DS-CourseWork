@@ -43,6 +43,11 @@ const FilledCart = (props) => {
     />
   ))
 
+  const onChangeComment = (event) => {
+    let newComment = event.target.value
+    props.updateComment(newComment)
+  }
+
   return (
     <div className={classes.filledCart}>
       <div className={classes.products}>
@@ -60,7 +65,11 @@ const FilledCart = (props) => {
             <label htmlFor='comment'>Спеціальні інструкції для продавця</label>
           </div>
           <div>
-            <textarea id='comment'></textarea>
+            <textarea
+              onChange={onChangeComment}
+              id='comment'
+              value={props.comment}
+            />
           </div>
         </div>
         <div className={classes.bill}>

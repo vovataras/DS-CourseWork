@@ -1,11 +1,15 @@
 import { connect } from 'react-redux'
-import { removeProductCreator, updateProductQuantityCreator } from '../../redux/cart-reducer'
+import {
+  removeProductCreator,
+  updateProductQuantityCreator,
+  updateCommentCreator,
+} from '../../redux/cart-reducer'
 import Cart from './Cart'
 
 let mapStateToProps = (state) => {
   console.log(state.cart)
   return {
-    cart: state.cart
+    cart: state.cart,
   }
 }
 
@@ -16,6 +20,10 @@ let mapDispatchToProps = (dispatch) => {
     },
     updateProductQuantity: (unique_id, quantity) => {
       let action = updateProductQuantityCreator(unique_id, quantity)
+      dispatch(action)
+    },
+    updateComment: (newComment) => {
+      let action = updateCommentCreator(newComment)
       dispatch(action)
     },
   }
