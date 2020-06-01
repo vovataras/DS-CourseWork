@@ -38,13 +38,8 @@ const cartReducer = (state = initialState, action) => {
         }
       }
 
-      newState.productsCount = newState.products.reduce((sum, current) => {
-        return sum + current.quantity
-      }, 0)
-
-      newState.total = newState.products.reduce((sum, current) => {
-        return sum + current.totalPrice
-      }, 0)
+      newState.productsCount = getNewProductsCount(newState)
+      newState.total = getNewTotal(newState)
 
       return newState
     }
@@ -57,13 +52,8 @@ const cartReducer = (state = initialState, action) => {
         products: newProducts,
       }
 
-      newState.productsCount = newState.products.reduce((sum, current) => {
-        return sum + current.quantity
-      }, 0)
-
-      newState.total = newState.products.reduce((sum, current) => {
-        return sum + current.totalPrice
-      }, 0)
+      newState.productsCount = getNewProductsCount(newState)
+      newState.total = getNewTotal(newState)
 
       return newState
     }
@@ -81,13 +71,8 @@ const cartReducer = (state = initialState, action) => {
         products: newProducts,
       }
 
-      newState.productsCount = newState.products.reduce((sum, current) => {
-        return sum + current.quantity
-      }, 0)
-
-      newState.total = newState.products.reduce((sum, current) => {
-        return sum + current.totalPrice
-      }, 0)
+      newState.productsCount = getNewProductsCount(newState)
+      newState.total = getNewTotal(newState)
 
       return newState
     }
@@ -95,6 +80,20 @@ const cartReducer = (state = initialState, action) => {
       return state
   }
 }
+
+const getNewProductsCount = (newState) => {
+  return newState.products.reduce((sum, current) => {
+    return sum + current.quantity
+  }, 0)
+}
+
+const getNewTotal = (newState) => {
+  return newState.products.reduce((sum, current) => {
+    return sum + current.totalPrice
+  }, 0)
+}
+
+
 
 export const addProductCreator = (product) => ({
   type: ADD_PRODUCT,
