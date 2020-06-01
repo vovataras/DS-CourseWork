@@ -22,7 +22,9 @@ const cartReducer = (state = initialState, action) => {
         let newProducts = state.products.map((product) => {
           if (product.unique_id === action.newProduct.unique_id) {
             product.quantity = product.quantity += 1
-            product.totalPrice = product.quantity * product.price
+            product.totalPrice = Number(
+              (product.quantity * product.price).toFixed(2)
+            )
           }
           return product
         })
@@ -61,7 +63,9 @@ const cartReducer = (state = initialState, action) => {
       let newProducts = state.products.map((product) => {
         if (product.unique_id === action.unique_id) {
           product.quantity = action.newQuantity
-          product.totalPrice = product.quantity * product.price
+          product.totalPrice = Number(
+            (product.quantity * product.price).toFixed(2)
+          )
         }
         return product
       })
@@ -89,11 +93,9 @@ const getNewProductsCount = (newState) => {
 
 const getNewTotal = (newState) => {
   return newState.products.reduce((sum, current) => {
-    return sum + current.totalPrice
+    return Number((sum + current.totalPrice).toFixed(2))
   }, 0)
 }
-
-
 
 export const addProductCreator = (product) => ({
   type: ADD_PRODUCT,
