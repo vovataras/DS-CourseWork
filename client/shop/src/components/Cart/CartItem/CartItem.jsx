@@ -14,8 +14,7 @@ const CartItem = (props) => {
   }
 
   let onChangeProductQuantity = (event) => {
-    let newQuantity = event.target.value
-    // alert(newQuantity)
+    let newQuantity = Number(event.target.value)
     props.updateProductQuantity(props.product.unique_id, newQuantity)
   }
 
