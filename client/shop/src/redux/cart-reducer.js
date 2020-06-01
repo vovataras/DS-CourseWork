@@ -48,8 +48,25 @@ const cartReducer = (state = initialState, action) => {
 
       return newState
     }
-    case REMOVE_PRODUCT:
-      return state
+    case REMOVE_PRODUCT: {
+      let newProducts = state.products.filter((product) => {
+        return product.unique_id !== action.unique_id
+      })
+      let newState = {
+        ...state,
+        products: newProducts,
+      }
+
+      newState.productsCount = newState.products.reduce((sum, current) => {
+        return sum + current.quantity
+      }, 0)
+
+      newState.total = newState.products.reduce((sum, current) => {
+        return sum + current.totalPrice
+      }, 0)
+
+      return newState
+    }
     case UPDATE_PRODUCT_QUANTITY:
       return state
     default:

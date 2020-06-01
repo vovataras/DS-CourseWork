@@ -34,7 +34,13 @@ const EmptyCart = (props) => {
 }
 
 const FilledCart = (props) => {
-  let CartItems = props.cart.products.map((p) => <CartItem product={p} key={p.unique_id}/>)
+  let CartItems = props.cart.products.map((p) => (
+    <CartItem
+      product={p}
+      key={p.unique_id}
+      removeProduct={props.removeProduct}
+    />
+  ))
 
   return (
     <div className={classes.filledCart}>
@@ -57,9 +63,7 @@ const FilledCart = (props) => {
           </div>
         </div>
         <div className={classes.bill}>
-          <div className={classes.totalPrice}>
-            Загалом ₴{props.cart.total}
-          </div>
+          <div className={classes.totalPrice}>Загалом ₴{props.cart.total}</div>
           <div className={classes.buttons}>
             <Link to={path.products} className={classes.btnContinue}>
               Продовжити покупки

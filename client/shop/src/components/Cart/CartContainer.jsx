@@ -11,11 +11,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    removeProduct: (productId) => {
-      dispatch(removeProductCreator(productId))
+    removeProduct: (unique_id) => {
+      dispatch(removeProductCreator(unique_id))
     },
-    updateProductQuantity: (productId, quantity) => {
-      let action = updateProductQuantityCreator(productId, quantity)
+    updateProductQuantity: (unique_id, quantity) => {
+      let action = updateProductQuantityCreator(unique_id, quantity)
       dispatch(action)
     },
   }

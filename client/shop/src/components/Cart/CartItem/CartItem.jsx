@@ -6,6 +6,11 @@ import { path } from '../../../paths'
 const CartItem = (props) => {
   let imgLink = 'https://freesvg.org/img/Placeholder.png'
 
+  let onRemoveProduct = () => {
+    console.log(props.product.unique_id)
+    props.removeProduct(props.product.unique_id)
+  }
+
   return (
     <div className={classes.cartItem}>
       <div className={classes.itemImage}>
@@ -14,7 +19,7 @@ const CartItem = (props) => {
       <div className={classes.itemDescription}>
         <h4>{props.product.name}</h4>
         <div>{props.product.size}</div>
-        <div>Видалити</div>
+        <div onClick={onRemoveProduct}>Видалити</div>
       </div>
       <div className={classes.itemPrice}>₴{props.product.price}</div>
       <div className={classes.itemQuantity}>{props.product.quantity}</div>
