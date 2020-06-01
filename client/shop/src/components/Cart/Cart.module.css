@@ -72,18 +72,35 @@
   width: 20%;
   text-align: start;
 }
+.itemImage:hover {
+  opacity: 0.8;
+}
 
 .itemDescription {
   width: 35%;
-  padding: 1rem;
+  padding: 0 1rem;
   text-align: start;
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .itemDescription h4{
-  padding: 0;
+  padding: 0 0 0.5rem 0;
   margin: 0;
   font-weight: normal;
   font-size: 1rem;
+}
+.itemDescription h4:hover{
+  opacity: 0.8;
+}
+
+.itemDescription .removeItem {
+  padding-top: 1rem;
+}
+.itemDescription .removeItem:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .itemPrice {
