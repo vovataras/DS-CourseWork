@@ -31,7 +31,7 @@ class ProductPageContainer extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    collections: state.collections,
+    // collections: state.collections,
   }
 }
 

@@ -9,7 +9,7 @@ const ProductPage = (props) => {
     <div className={classes.productPage}>
       <div className={classes.firstRow}>
         <div className={classes.images}>
-          <img src={props.product.image} alt={props.product.name + ' image'} />
+          <img src={props.product.image} alt={'Product image'} />
         </div>
         <div className={classes.info}>
           <h2>{props.product.name}</h2>
