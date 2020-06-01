@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import ProductPage from './ProductPage'
 import { connect } from 'react-redux'
 import * as axios from 'axios'
+import { addProductCreator, updateProductQuantityCreator } from '../../../redux/cart-reducer'
 
 class ProductPageContainer extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ProductPageContainer extends React.Component {
   }
 
   render() {
-    return <ProductPage product={this.state.data} />
+    return <ProductPage {...this.props} product={this.state.data} />
   }
 }
 
@@ -35,5 +36,17 @@ let mapStateToProps = (state) => {
   }
 }
 
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addProduct: (product) => {
+      dispatch(addProductCreator(product))
+    },
+    // updateProductQuantity: (productId, quantity) => {
+    //   let action = updateProductQuantityCreator(productId, quantity)
+    //   dispatch(action)
+    // },
+  }
+}
+
 let ProductPageContainerWithRouter = withRouter(ProductPageContainer)
-export default connect(mapStateToProps)(ProductPageContainerWithRouter)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPageContainerWithRouter)

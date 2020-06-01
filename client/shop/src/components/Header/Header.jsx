@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
 import {path } from '../../paths'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={classes.header}>
       <div className={classes.topBar}>
@@ -16,7 +16,7 @@ const Header = () => {
         <div className={classes.cart}>
           <Link to={path.cart}>
             <FontAwesomeIcon icon={faShoppingCart} />
-            <span>Кошик (0)</span>
+            <span>Кошик ({props.productsCount})</span>
           </Link>
         </div>
       </div>

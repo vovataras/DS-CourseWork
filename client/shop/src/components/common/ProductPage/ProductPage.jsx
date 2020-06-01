@@ -3,13 +3,28 @@ import classes from './ProductPage.module.css'
 import { NavLink } from 'react-router-dom'
 
 const ProductPage = (props) => {
-  let imgLink = 'https://freesvg.org/img/Placeholder.png'
+  // let imgLink = 'https://freesvg.org/img/Placeholder.png'
+
+
+  // TODO: get size from select element
+  let onAddProduct = () => {
+    let newProduct = {
+      unique_id: props.product.product_id + props.product.size,
+      ...props.product,
+      quantity: 1,
+      totalPrice: props.product.price
+    }
+    delete newProduct.description
+
+    console.log(newProduct)
+    props.addProduct(newProduct)
+  }
 
   return (
     <div className={classes.productPage}>
       <div className={classes.firstRow}>
         <div className={classes.images}>
-          <img src={props.product.image} alt={'Product image'} />
+          <img src={props.product.image} />
         </div>
         <div className={classes.info}>
           <h2>{props.product.name}</h2>
@@ -34,7 +49,9 @@ const ProductPage = (props) => {
               </div>
             </div>
             <div className={classes.buttons}>
-              <button className={classes.add}>Додати в кошик</button>
+              <button onClick={onAddProduct} className={classes.add}>
+                Додати в кошик
+              </button>
               <button className={classes.buy}>Купити зараз</button>
             </div>
           </div>

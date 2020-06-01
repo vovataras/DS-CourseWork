@@ -7,6 +7,7 @@ import CartItem from './CartItem/CartItem'
 const Cart = (props) => {
   let Content = <></>
 
+  console.log(props.cart.productsCount)
   if (props.cart.productsCount >= 1) {
     Content = FilledCart
   } else {
@@ -33,6 +34,8 @@ const EmptyCart = (props) => {
 }
 
 const FilledCart = (props) => {
+  let CartItems = props.cart.products.map((p) => <CartItem product={p} key={p.unique_id}/>)
+
   return (
     <div className={classes.filledCart}>
       <div className={classes.products}>
@@ -42,11 +45,7 @@ const FilledCart = (props) => {
           <span className={classes.quantityH}>Кількість</span>
           <span className={classes.totalH}>Загалом</span>
         </div>
-        <div className={classes.productsContainer}>
-          <CartItem {...props} />
-          <CartItem />
-          <CartItem />
-        </div>
+        <div className={classes.productsContainer}>{CartItems}</div>
       </div>
       <div className={classes.cartFooter}>
         <div className={classes.comment}>
@@ -58,7 +57,9 @@ const FilledCart = (props) => {
           </div>
         </div>
         <div className={classes.bill}>
-          <div className={classes.totalPrice}>Загалом ₴1599.95</div>
+          <div className={classes.totalPrice}>
+            Загалом ₴{props.cart.total}
+          </div>
           <div className={classes.buttons}>
             <Link to={path.products} className={classes.btnContinue}>
               Продовжити покупки

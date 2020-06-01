@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import { Route, BrowserRouter, Redirect } from 'react-router-dom'
@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <div className='wrapper'>
-          <Header />
+          <HeaderContainer />
           <div className='center'>
             <div className='navWrapper'>
               <Navbar />

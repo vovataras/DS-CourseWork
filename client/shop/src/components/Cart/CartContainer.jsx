@@ -1,10 +1,9 @@
-import React from 'react'
 import { connect } from 'react-redux'
 import { removeProductCreator, updateProductQuantityCreator } from '../../redux/cart-reducer'
 import Cart from './Cart'
 
 let mapStateToProps = (state) => {
-  debugger
+  console.log(state.cart)
   return {
     cart: state.cart
   }
