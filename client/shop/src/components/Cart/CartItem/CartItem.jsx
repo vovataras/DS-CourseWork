@@ -13,6 +13,12 @@ const CartItem = (props) => {
     props.removeProduct(props.product.unique_id)
   }
 
+  let onChangeProductQuantity = (event) => {
+    let newQuantity = event.target.value
+    // alert(newQuantity)
+    props.updateProductQuantity(props.product.unique_id, newQuantity)
+  }
+
   return (
     <div className={classes.cartItem}>
       <div className={classes.itemImage}>
@@ -30,7 +36,14 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.itemPrice}>₴{props.product.price}</div>
-      <div className={classes.itemQuantity}>{props.product.quantity}</div>
+      <div className={classes.itemQuantity}>
+        <input
+          onChange={onChangeProductQuantity}
+          type='number'
+          min='1'
+          value={props.product.quantity}
+        />
+      </div>
       <div className={classes.itemTotal}>₴{props.product.totalPrice}</div>
     </div>
   )

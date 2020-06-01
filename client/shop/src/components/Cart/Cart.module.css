@@ -106,9 +106,20 @@
 .itemPrice {
   width: 15%;
 }
+
 .itemQuantity {
   width: 15%;
 }
+.itemQuantity input{
+  color: #333;
+  font-size: 0.95rem;
+  width: 55px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: none;
+  padding: 0.7rem 0.5rem;
+}
+
 .itemTotal {
   width: 15%;
 }

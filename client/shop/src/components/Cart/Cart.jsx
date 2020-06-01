@@ -39,6 +39,7 @@ const FilledCart = (props) => {
       product={p}
       key={p.unique_id}
       removeProduct={props.removeProduct}
+      updateProductQuantity={props.updateProductQuantity}
     />
   ))
 

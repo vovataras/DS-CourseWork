@@ -67,8 +67,30 @@ const cartReducer = (state = initialState, action) => {
 
       return newState
     }
-    case UPDATE_PRODUCT_QUANTITY:
-      return state
+    case UPDATE_PRODUCT_QUANTITY: {
+      let newProducts = state.products.map((product) => {
+        if (product.unique_id === action.unique_id) {
+          product.quantity = action.newQuantity
+          product.totalPrice = product.quantity * product.price
+        }
+        return product
+      })
+
+      let newState = {
+        ...state,
+        products: newProducts,
+      }
+
+      newState.productsCount = newState.products.reduce((sum, current) => {
+        return sum + current.quantity
+      }, 0)
+
+      newState.total = newState.products.reduce((sum, current) => {
+        return sum + current.totalPrice
+      }, 0)
+
+      return newState
+    }
     default:
       return state
   }
