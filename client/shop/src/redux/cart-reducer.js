@@ -117,7 +117,7 @@ export const updateProductQuantityCreator = (unique_id, quantity) => ({
   newQuantity: quantity,
 })
 export const updateCommentCreator = (newComment) => ({
-  type: UPDATE_PRODUCT_QUANTITY,
+  type: UPDATE_COMMENT,
   newComment: newComment,
 })
 
