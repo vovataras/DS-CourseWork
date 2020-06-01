@@ -3,7 +3,10 @@ const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const UPDATE_PRODUCT_QUANTITY = 'UPDATE_PRODUCT_QUANTITY'
 
 let initialState = {
-  
+  products: [],
+  productsCount: 0,
+  comment: '',
+  subtotal: 0,
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -20,7 +23,7 @@ const cartReducer = (state = initialState, action) => {
 }
 
 export const addProductCreator = () => ({ type: ADD_PRODUCT })
-export const removeProductCreator = () => ({ type: REMOVE_PRODUCT })
+export const removeProductCreator = (productId) => ({ type: REMOVE_PRODUCT, productId: productId })
 export const updateProductQuantityCreator = (quantity) => ({
   type: UPDATE_PRODUCT_QUANTITY,
   newQuantity: quantity,

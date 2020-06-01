@@ -8,7 +8,7 @@ import HomeContainer from './components/Home/HomeContainer'
 import ProductPageContainer from './components/common/ProductPage/ProductPageContainer'
 import CategoryPageContainer from './components/CategoryPage/CategoryPageContainer'
 import { path } from './paths'
-import Cart from './components/Cart/Cart'
+import CartContainer from './components/Cart/CartContainer'
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
               <Route
                 exact
                 path={path.cart}
-                render={() => <Cart />}
+                render={() => <CartContainer />}
               />
               <Route
                 exact
