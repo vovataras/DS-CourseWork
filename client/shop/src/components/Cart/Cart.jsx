@@ -78,7 +78,7 @@ const FilledCart = (props) => {
             <Link to={path.products} className={classes.btnContinue}>
               Продовжити покупки
             </Link>
-            <Link to={path.checkOut} className={classes.btnCheckOut}>
+            <Link to={path.checkout} className={classes.btnCheckOut}>
               Check Out
             </Link>
           </div>

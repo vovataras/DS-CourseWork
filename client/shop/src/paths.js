@@ -9,7 +9,7 @@ export const path = {
   shorts: '/products/shorts',
   productPage: '/products/:category/:productId',
   cart: '/cart',
-  checkOut: 'checkout'
+  checkout: '/checkout'
 }
 
 
