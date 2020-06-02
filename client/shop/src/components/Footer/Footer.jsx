@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Footer.module.css'
 import { NavLink } from 'react-router-dom'
+import {path} from '../../paths'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className={classes.links}>
           <h3>Посилання</h3>
           <div className={classes.linkItem}>
-            <NavLink to='/search'>
+            <NavLink to={path.search}>
               Пошук
             </NavLink>
           </div>

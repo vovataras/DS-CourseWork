@@ -3,15 +3,17 @@ import classes from './Header.module.css'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons'
-import {path } from '../../paths'
+import { path } from '../../paths'
 
 const Header = (props) => {
   return (
     <header className={classes.header}>
       <div className={classes.topBar}>
         <div className={classes.search}>
-          <FontAwesomeIcon icon={faSearch} />
-          <span>Search</span>
+          <Link to={path.search}>
+            <FontAwesomeIcon icon={faSearch} />
+            <span>Search</span>
+          </Link>
         </div>
         <div className={classes.cart}>
           <Link to={path.cart}>

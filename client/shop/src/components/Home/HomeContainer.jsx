@@ -6,7 +6,7 @@ class HomeContainer extends React.Component {
   
   constructor(props) {
     super(props)
-    this.api_url = 'http://127.0.0.1:8000/products/'
+    this.api_url = 'http://127.0.0.1:8000/products/?count=9'
     this.state = {data: []}
   }
 

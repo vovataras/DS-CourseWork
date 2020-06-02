@@ -10,6 +10,7 @@ import CategoryPageContainer from './components/CategoryPage/CategoryPageContain
 import { path } from './paths'
 import CartContainer from './components/Cart/CartContainer'
 import CheckoutContainer from './components/Checkout/CheckoutContainer'
+import Search from './components/Search/Search'
 
 function App() {
   return (
@@ -94,6 +95,11 @@ function App() {
                 exact
                 path={path.productPage}
                 render={() => <ProductPageContainer />}
+              />
+              <Route
+                exact
+                path={path.search}
+                render={() => <Search />}
               />
             </div>
           </div>
