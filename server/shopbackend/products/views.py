@@ -21,7 +21,11 @@ from rest_framework import status
 
 class ProductList(APIView):
     def get(self, request, format=None):
-        products = Product.objects.all()
+        count = request.GET.get("count", "")
+        if count:
+            products = Product.objects.all()[:int(count)]
+        else:
+            products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
