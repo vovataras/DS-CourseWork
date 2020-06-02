@@ -11,12 +11,12 @@
   /* border: solid 1px #333; */
   border: none;
   font-size: 1rem;
-  padding: 1rem;
+  padding: 0.9rem;
   margin-bottom: 1rem;
 }
-.checkoutPage input:focus {
+/* .checkoutPage input:focus {
   border: solid 1px #333;
-}
+} */
 
 .checkoutPage h2 {
   margin: 0;
@@ -42,7 +42,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: start;
-  max-width: 500px;
+  max-width: 550px;
 }
 
 .contact {
@@ -82,4 +82,35 @@
 
 .addressThirdRow input {
   width: 49%;
+}
+
+.buttons {
+  margin: 2rem 0 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnBack, .btnConfirm{
+  font-size: 0.9rem;
+  padding: 0.9rem;
+  border: 2px solid #333;
+  text-transform: uppercase;
+}
+
+.btnBack {
+  background: #FFF;
+  color: #333;
+  
+}
+
+.btnConfirm {
+  background: #333;
+  color: #FFF;
+}
+
+.btnBack:hover, .btnConfirm:hover{
+  opacity: 0.8;
+  cursor: pointer;
 }

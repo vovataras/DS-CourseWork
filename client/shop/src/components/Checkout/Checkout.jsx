@@ -7,11 +7,11 @@ const Checkout = (props) => {
   let Content = <></>
 
   // console.log(props.cart.productsCount)
-  // if (props.cart.productsCount >= 1) {
+  if (props.cart.productsCount >= 1) {
   Content = FilledCart
-  // } else {
-  //   Content = EmptyCart
-  // }
+  } else {
+    Content = EmptyCart
+  }
 
   return (
     <div className={classes.checkoutPage}>
@@ -51,7 +51,7 @@ const FilledCart = (props) => {
           <input type='text' placeholder='Прізвище' />
         </div>
         <div className={classes.addressSecondRow}>
-        <input type='text' placeholder='Адреса' />
+          <input type='text' placeholder='Адреса' />
         </div>
         <div className={classes.addressThirdRow}>
           <input type='text' placeholder='Місто' />
@@ -59,8 +59,12 @@ const FilledCart = (props) => {
         </div>
       </div>
       <div className={classes.buttons}>
-        <Link to={path.cart}>Повернутись до кошика</Link>
-        <button>Оформити замовлення</button>
+        <div>
+          <Link className={classes.btnBack} to={path.cart}>Повернутись до кошика</Link>
+        </div>
+        <div>
+          <button className={classes.btnConfirm}>Оформити замовлення</button>
+        </div>
       </div>
     </div>
   )
