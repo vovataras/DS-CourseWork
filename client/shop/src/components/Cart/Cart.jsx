@@ -68,7 +68,7 @@ const FilledCart = (props) => {
             <textarea
               onChange={onChangeComment}
               id='comment'
-              value={props.comment}
+              value={props.cart.comment}
             />
           </div>
         </div>
