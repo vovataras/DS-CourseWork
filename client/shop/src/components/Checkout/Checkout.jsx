@@ -8,7 +8,7 @@ const Checkout = (props) => {
 
   // console.log(props.cart.productsCount)
   if (props.cart.productsCount >= 1) {
-  Content = FilledCart
+    Content = FilledCart
   } else {
     Content = EmptyCart
   }
@@ -33,34 +33,102 @@ const EmptyCart = (props) => {
 }
 
 const FilledCart = (props) => {
+
+  const onChangePhone = (event) => {
+    let value = event.target.value
+    props.updatePhone(value)
+  }
+  const onChangeEmail = (event) => {
+    let value = event.target.value
+    props.updateEmail(value)
+  }
+  const onChangeName = (event) => {
+    let value = event.target.value
+    props.updateName(value)
+  }
+  const onChangeSurname = (event) => {
+    let value = event.target.value
+    props.updateSurname(value)
+  }
+  const onChangeAddress = (event) => {
+    let value = event.target.value
+    props.updateAddress(value)
+  }
+  const onChangeCity = (event) => {
+    let value = event.target.value
+    props.updateCity(value)
+  }
+  const onChangeIndex = (event) => {
+    let value = event.target.value
+    props.updateIndex(value)
+  }
+
   return (
     <div className={classes.filledCart}>
       <div className={classes.contact}>
         <h3>Контактна інформація</h3>
         <div>
-          <input type='tel' placeholder='Телефон' required />
+          <input
+            onChange={onChangePhone}
+            value={props.checkout.phone}
+            type='tel'
+            placeholder='Телефон'
+            required
+          />
         </div>
         <div>
-          <input type='email' placeholder='Email' />
+          <input
+            onChange={onChangeEmail}
+            value={props.checkout.email}
+            type='email'
+            placeholder='Email'
+          />
         </div>
       </div>
       <div className={classes.address}>
         <h3>Адреса доставки</h3>
         <div className={classes.addressFirstRow}>
-          <input type='text' placeholder="Ім'я" />
-          <input type='text' placeholder='Прізвище' />
+          <input
+            onChange={onChangeName}
+            value={props.checkout.name}
+            type='text'
+            placeholder="Ім'я"
+          />
+          <input
+            onChange={onChangeSurname}
+            value={props.checkout.surname}
+            type='text'
+            placeholder='Прізвище'
+          />
         </div>
         <div className={classes.addressSecondRow}>
-          <input type='text' placeholder='Адреса' />
+          <input
+            onChange={onChangeAddress}
+            value={props.checkout.address}
+            type='text'
+            placeholder='Адреса'
+          />
         </div>
         <div className={classes.addressThirdRow}>
-          <input type='text' placeholder='Місто' />
-          <input type='text' placeholder='Поштовий індекс' />
+          <input
+            onChange={onChangeCity}
+            value={props.checkout.city}
+            type='text'
+            placeholder='Місто'
+          />
+          <input
+            onChange={onChangeIndex}
+            value={props.checkout.index}
+            type='text'
+            placeholder='Поштовий індекс'
+          />
         </div>
       </div>
       <div className={classes.buttons}>
         <div>
-          <Link className={classes.btnBack} to={path.cart}>Повернутись до кошика</Link>
+          <Link className={classes.btnBack} to={path.cart}>
+            Повернутись до кошика
+          </Link>
         </div>
         <div>
           <button className={classes.btnConfirm}>Оформити замовлення</button>
