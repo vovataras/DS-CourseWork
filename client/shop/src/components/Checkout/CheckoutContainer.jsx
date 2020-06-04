@@ -11,6 +11,7 @@ import {
 } from '../../redux/checkout-reducer'
 import Checkout from './Checkout'
 import * as axios from 'axios'
+import { restoreStateCreator } from '../../redux/actions'
 
 const CheckoutContainer = (props) => {
   const sendOrder = () => {
@@ -22,6 +23,7 @@ const CheckoutContainer = (props) => {
     axios.post('http://127.0.0.1:8000/order-api/orders/', order).then(
       (response) => {
         console.log(response)
+        props.restoreState()
       },
       (error) => {
         console.log(error)
@@ -63,6 +65,9 @@ let mapDispatchToProps = (dispatch) => {
     updateIndex: (newIndex) => {
       dispatch(updateIndexCreator(newIndex))
     },
+    restoreState: () => {
+      dispatch(restoreStateCreator())
+    }
   }
 }
 
