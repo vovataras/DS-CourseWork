@@ -39,14 +39,9 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
+
 class CartSerializer(serializers.ModelSerializer):
     products = ProductSerializer(many=True)
-
-    class Meta:
-        model = Cart
-        fields = '__all__'
-
-class CartSerializerWithoutProducts(serializers.ModelSerializer):
 
     class Meta:
         model = Cart
