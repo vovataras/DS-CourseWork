@@ -1,10 +1,12 @@
-const UPDATE_PHONE = 'UPDATE_PHONE'
-const UPDATE_EMAIL = 'REMOVE_EMAIL'
-const UPDATE_NAME = 'UPDATE_NAME'
-const UPDATE_SURNAME = 'UPDATE_SURNAME'
-const UPDATE_ADDRESS = 'UPDATE_ADDRESS'
-const UPDATE_CITY = 'UPDATE_CITY'
-const UPDATE_INDEX = 'UPDATE_INDEX'
+import {
+  UPDATE_PHONE,
+  UPDATE_EMAIL,
+  UPDATE_NAME,
+  UPDATE_SURNAME,
+  UPDATE_ADDRESS,
+  UPDATE_CITY,
+  UPDATE_INDEX,
+} from './actions'
 
 let initialState = {
   phone: '',
@@ -57,36 +59,5 @@ const checkoutReducer = (state = initialState, action) => {
       return state
   }
 }
-
-
-export const updatePhoneCreator = (newPhone) => ({
-  type: UPDATE_PHONE,
-  newPhone: newPhone,
-})
-export const updateEmailCreator = (newEmail) => ({
-  type: UPDATE_EMAIL,
-  newEmail: newEmail,
-})
-export const updateNameCreator = (newName) => ({
-  type: UPDATE_NAME,
-  newName: newName,
-})
-export const updateSurnameCreator = (newSurname) => ({
-  type: UPDATE_SURNAME,
-  newSurname: newSurname,
-})
-export const updateAddressCreator = (newAddress) => ({
-  type: UPDATE_ADDRESS,
-  newAddress: newAddress,
-})
-export const updateCityCreator = (newCity) => ({
-  type: UPDATE_CITY,
-  newCity: newCity,
-})
-export const updateIndexCreator = (newIndex) => ({
-  type: UPDATE_INDEX,
-  newIndex: newIndex,
-})
-
 
 export default checkoutReducer

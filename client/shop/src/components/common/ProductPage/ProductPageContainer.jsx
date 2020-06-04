@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import ProductPage from './ProductPage'
 import { connect } from 'react-redux'
 import * as axios from 'axios'
-import { addProductCreator, updateProductQuantityCreator } from '../../../redux/cart-reducer'
+import { addProductCreator, updateProductQuantityCreator } from '../../../redux/actions'
 
 class ProductPageContainer extends React.Component {
   constructor(props) {

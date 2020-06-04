@@ -1,7 +1,9 @@
-const ADD_PRODUCT = 'ADD_PRODUCT'
-const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
-const UPDATE_PRODUCT_QUANTITY = 'UPDATE_PRODUCT_QUANTITY'
-const UPDATE_COMMENT = 'UPDATE_COMMENT'
+import {
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  UPDATE_PRODUCT_QUANTITY,
+  UPDATE_COMMENT,
+} from './actions'
 
 let initialState = {
   products: [],
@@ -37,7 +39,7 @@ const cartReducer = (state = initialState, action) => {
         newState = {
           ...state,
           products: [...state.products, action.newProduct],
-          productsCount: (state.productsCount + 1),
+          productsCount: state.productsCount + 1,
         }
       }
 
@@ -102,23 +104,5 @@ const getNewTotal = (newState) => {
     return Number((sum + current.totalPrice).toFixed(2))
   }, 0)
 }
-
-export const addProductCreator = (product) => ({
-  type: ADD_PRODUCT,
-  newProduct: product,
-})
-export const removeProductCreator = (unique_id) => ({
-  type: REMOVE_PRODUCT,
-  unique_id: unique_id,
-})
-export const updateProductQuantityCreator = (unique_id, quantity) => ({
-  type: UPDATE_PRODUCT_QUANTITY,
-  unique_id: unique_id,
-  newQuantity: quantity,
-})
-export const updateCommentCreator = (newComment) => ({
-  type: UPDATE_COMMENT,
-  newComment: newComment,
-})
 
 export default cartReducer

@@ -3,7 +3,7 @@ import {
   removeProductCreator,
   updateProductQuantityCreator,
   updateCommentCreator,
-} from '../../redux/cart-reducer'
+} from '../../redux/actions'
 import Cart from './Cart'
 
 let mapStateToProps = (state) => {

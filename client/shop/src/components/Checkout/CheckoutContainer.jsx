@@ -1,18 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {
+import Checkout from './Checkout'
+import * as axios from 'axios'
+import { withRouter } from 'react-router-dom'
+import { 
+  restoreStateCreator,
   updatePhoneCreator,
   updateEmailCreator,
   updateNameCreator,
   updateSurnameCreator,
   updateAddressCreator,
   updateCityCreator,
-  updateIndexCreator,
-} from '../../redux/checkout-reducer'
-import Checkout from './Checkout'
-import * as axios from 'axios'
-import { restoreStateCreator } from '../../redux/actions'
-import { withRouter } from 'react-router-dom'
+  updateIndexCreator, 
+} from '../../redux/actions'
 
 class CheckoutContainer extends React.Component {
 
