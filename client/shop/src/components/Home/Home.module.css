@@ -36,7 +36,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: gray;
+  background: #DDD;
+  color: #FFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pageItem:hover {
+  background: #8F8F8F;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

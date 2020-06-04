@@ -6,7 +6,8 @@ import PageItem from './PageItem/PageItem'
 import { path } from '../../paths'
 
 const Home = (props) => {
-  let imgLink = 'https://freesvg.org/img/Placeholder.png'
+  // let imgLink = 'https://freesvg.org/img/Placeholder.png'
+  let imgLink = 'https://webcomicms.net/sites/default/files/clipart/143514/x-art-clip-143514-4521306.svg'
 
   return (
     <div className={classes.home}>
