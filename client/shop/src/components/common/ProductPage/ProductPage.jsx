@@ -16,7 +16,7 @@ const ProductPage = (props) => {
     }
     delete newProduct.description
 
-    console.log(newProduct)
+    // console.log(newProduct)
     props.addProduct(newProduct)
   }
 

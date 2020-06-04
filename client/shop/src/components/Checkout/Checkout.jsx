@@ -63,6 +63,10 @@ const FilledCart = (props) => {
     props.updateIndex(value)
   }
 
+  const onClickConfirm = () => {
+    props.sendOrder()
+  }
+
   return (
     <div className={classes.filledCart}>
       <div className={classes.contact}>
@@ -131,7 +135,7 @@ const FilledCart = (props) => {
           </Link>
         </div>
         <div>
-          <button className={classes.btnConfirm}>Оформити замовлення</button>
+          <button onClick={onClickConfirm} className={classes.btnConfirm}>Оформити замовлення</button>
         </div>
       </div>
     </div>

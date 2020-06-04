@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import {
   updatePhoneCreator,
@@ -9,9 +10,30 @@ import {
   updateIndexCreator,
 } from '../../redux/checkout-reducer'
 import Checkout from './Checkout'
+import * as axios from 'axios'
+
+const CheckoutContainer = (props) => {
+  const sendOrder = () => {
+    let order = {
+      checkout: props.checkout,
+      cart: props.cart,
+    }
+
+    axios.post('http://127.0.0.1:8000/order-api/orders/', order).then(
+      (response) => {
+        console.log(response)
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+  }
+
+  return <Checkout {...props} sendOrder={sendOrder} />
+}
 
 let mapStateToProps = (state) => {
-  console.log(state.cart)
+  // console.log(state.cart)
   return {
     cart: state.cart,
     checkout: state.checkout,
@@ -44,5 +66,5 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 
-const CheckoutContainer = connect(mapStateToProps, mapDispatchToProps)(Checkout)
-export default CheckoutContainer
+// const CheckoutContainer = connect(mapStateToProps, mapDispatchToProps)(Checkout)
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutContainer)

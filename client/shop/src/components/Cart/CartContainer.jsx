@@ -7,7 +7,7 @@ import {
 import Cart from './Cart'
 
 let mapStateToProps = (state) => {
-  console.log(state.cart)
+  // console.log(state.cart)
   return {
     cart: state.cart,
   }
