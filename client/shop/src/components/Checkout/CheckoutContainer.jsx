@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Checkout from './Checkout'
 import * as axios from 'axios'
 import { withRouter } from 'react-router-dom'
-import { 
+import {
   restoreStateCreator,
   updatePhoneCreator,
   updateEmailCreator,
@@ -11,14 +11,13 @@ import {
   updateSurnameCreator,
   updateAddressCreator,
   updateCityCreator,
-  updateIndexCreator, 
+  updateIndexCreator,
 } from '../../redux/actions'
 
 class CheckoutContainer extends React.Component {
-
   constructor(props) {
     super(props)
-    this.state = { isSent: false}
+    this.state = { isSent: false }
   }
 
   sendOrder = () => {
@@ -31,8 +30,10 @@ class CheckoutContainer extends React.Component {
       (response) => {
         console.log(response)
         this.props.restoreState()
-        this.setState({isSent: true})
-        const toHome = () => {this.props.history.push('/home')}
+        this.setState({ isSent: true })
+        const toHome = () => {
+          this.props.history.push('/home')
+        }
         setTimeout(toHome, 3500)
       },
       (error) => {
@@ -42,12 +43,17 @@ class CheckoutContainer extends React.Component {
   }
 
   render() {
-    return <Checkout {...this.props} sendOrder={this.sendOrder} isSent={this.state.isSent}/>
+    return (
+      <Checkout
+        {...this.props}
+        sendOrder={this.sendOrder}
+        isSent={this.state.isSent}
+      />
+    )
   }
 }
 
 let mapStateToProps = (state) => {
-  // console.log(state.cart)
   return {
     cart: state.cart,
     checkout: state.checkout,
@@ -79,11 +85,12 @@ let mapDispatchToProps = (dispatch) => {
     },
     restoreState: () => {
       dispatch(restoreStateCreator())
-    }
+    },
   }
 }
 
 let ChekcoutContainerWithRouter = withRouter(CheckoutContainer)
-export default connect(mapStateToProps, mapDispatchToProps)(ChekcoutContainerWithRouter)
-// const CheckoutContainer = connect(mapStateToProps, mapDispatchToProps)(Checkout)
-// export default connect(mapStateToProps, mapDispatchToProps)(CheckoutContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChekcoutContainerWithRouter)

@@ -7,7 +7,6 @@ import CartItem from './CartItem/CartItem'
 const Cart = (props) => {
   let Content = <></>
 
-  // console.log(props.cart.productsCount)
   if (props.cart.productsCount >= 1) {
     Content = FilledCart
   } else {

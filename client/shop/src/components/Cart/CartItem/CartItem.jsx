@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom'
 import { path } from '../../../paths'
 
 const CartItem = (props) => {
-  let imgLink = 'https://freesvg.org/img/Placeholder.png'
   let productLink =
-    '/products/' + props.product.category + '/' + props.product.product_id
+    path.products +
+    '/' +
+    props.product.category +
+    '/' +
+    props.product.product_id
 
   let onRemoveProduct = () => {
     console.log(props.product.unique_id)

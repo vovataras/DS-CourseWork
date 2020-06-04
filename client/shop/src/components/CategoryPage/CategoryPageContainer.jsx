@@ -18,7 +18,6 @@ class CategoryPageContainer extends React.Component {
       this.setState({
         data: response.data,
       })
-      // console.log(response)
     })
   }
 

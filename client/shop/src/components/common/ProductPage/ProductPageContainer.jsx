@@ -3,13 +3,12 @@ import { withRouter } from 'react-router-dom'
 import ProductPage from './ProductPage'
 import { connect } from 'react-redux'
 import * as axios from 'axios'
-import { addProductCreator, updateProductQuantityCreator } from '../../../redux/actions'
+import { addProductCreator } from '../../../redux/actions'
 
 class ProductPageContainer extends React.Component {
   constructor(props) {
     super(props)
     this.productId = this.props.match.params.productId
-    // console.log(this.productId)
 
     this.api_url =
       'http://127.0.0.1:8000/products/product/' + this.productId + '/'
@@ -26,19 +25,22 @@ class ProductPageContainer extends React.Component {
       this.setState({
         data: response.data,
       })
-      // console.log(response)
     })
   }
 
   render() {
-    return <ProductPage {...this.props} product={this.state.data} buyNow={this.buyNow} />
+    return (
+      <ProductPage
+        {...this.props}
+        product={this.state.data}
+        buyNow={this.buyNow}
+      />
+    )
   }
 }
 
 let mapStateToProps = (state) => {
-  return {
-    // collections: state.collections,
-  }
+  return {}
 }
 
 let mapDispatchToProps = (dispatch) => {
@@ -46,12 +48,11 @@ let mapDispatchToProps = (dispatch) => {
     addProduct: (product) => {
       dispatch(addProductCreator(product))
     },
-    // updateProductQuantity: (productId, quantity) => {
-    //   let action = updateProductQuantityCreator(productId, quantity)
-    //   dispatch(action)
-    // },
   }
 }
 
 let ProductPageContainerWithRouter = withRouter(ProductPageContainer)
-export default connect(mapStateToProps, mapDispatchToProps)(ProductPageContainerWithRouter)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductPageContainerWithRouter)

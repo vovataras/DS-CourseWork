@@ -6,7 +6,6 @@ import { path } from '../../paths'
 const Checkout = (props) => {
   let Content = <></>
 
-  // console.log(props.cart.productsCount)
   if (props.cart.productsCount >= 1) {
     Content = FilledCart
   } else if (props.isSent) {

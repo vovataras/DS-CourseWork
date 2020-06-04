@@ -9,7 +9,7 @@ const ProductItem = (props) => {
       </div>
       <div className={classes.info}>
         <div className={classes.productName}>{props.name}</div>
-        <div className={classes.price}>{props.price}</div>
+        <div className={classes.price}>₴{props.price}</div>
       </div>
     </div>
   )
