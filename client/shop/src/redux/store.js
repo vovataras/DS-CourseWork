@@ -1,7 +1,8 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import cartReducer from './cart-reducer'
 import checkoutReducer from './checkout-reducer'
 import { RESTORE_STATE } from './actions'
+import logger from 'redux-logger'
 
 let reducers = combineReducers({
   cart: cartReducer,
@@ -18,6 +19,6 @@ const rootReducer = (state, action) => {
   return reducers(state, action)
 }
 
-let store = createStore(rootReducer)
+let store = createStore(rootReducer, applyMiddleware(logger))
 
 export default store
