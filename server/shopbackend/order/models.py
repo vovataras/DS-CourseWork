@@ -65,7 +65,7 @@ class Cart(models.Model):
     productsCount = models.IntegerField()
     comment = models.TextField()
     total = models.FloatField()
-    
+
 
     class Meta: 
         verbose_name = 'Cart'
@@ -76,6 +76,7 @@ class Cart(models.Model):
 
 
 class Order(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
     checkout = models.ForeignKey(to=Checkout, on_delete=models.CASCADE)
     cart = models.ForeignKey(to=Cart, on_delete=models.CASCADE)
 
@@ -89,7 +90,7 @@ class Order(models.Model):
 
 class Product(models.Model):
     cart = models.ForeignKey(Cart, related_name='products', on_delete=models.CASCADE)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    # order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
     # unique_id = models.CharField(max_length=30)
     product_id = models.IntegerField()
     name = models.CharField(max_length=50)
