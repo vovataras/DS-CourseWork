@@ -9,6 +9,8 @@ const Checkout = (props) => {
   // console.log(props.cart.productsCount)
   if (props.cart.productsCount >= 1) {
     Content = FilledCart
+  } else if (props.isSent) {
+    Content = OrderSent
   } else {
     Content = EmptyCart
   }
@@ -17,6 +19,15 @@ const Checkout = (props) => {
     <div className={classes.checkoutPage}>
       <h2>Оформлення замовлення</h2>
       <Content {...props} />
+    </div>
+  )
+}
+
+const OrderSent = (props) => {
+  return (
+    <div className={classes.emptyCart}>
+      <p>Замовлення успішно оформлено.</p>
+      <p>Вас буде перенаправлено на головну сторінку.</p>
     </div>
   )
 }
@@ -33,7 +44,6 @@ const EmptyCart = (props) => {
 }
 
 const FilledCart = (props) => {
-
   const onChangePhone = (event) => {
     let value = event.target.value
     props.updatePhone(value)
@@ -135,7 +145,9 @@ const FilledCart = (props) => {
           </Link>
         </div>
         <div>
-          <button onClick={onClickConfirm} className={classes.btnConfirm}>Оформити замовлення</button>
+          <button onClick={onClickConfirm} className={classes.btnConfirm}>
+            Оформити замовлення
+          </button>
         </div>
       </div>
     </div>
