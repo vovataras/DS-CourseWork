@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-
-
 from rest_framework import generics, status, viewsets
-from .models import Poll, Choice, Cart, Checkout, Order, Product
+from .models import Cart, Checkout, Order, Product
 from .serializers import OrderSerializer, ProductSerializer, CartSerializer, CheckoutSerializer
 from rest_framework.response import Response
 

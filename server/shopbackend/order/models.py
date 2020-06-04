@@ -10,7 +10,7 @@ from django.db import models
 #     city = models.CharField(max_length=50)
 #     index = models.CharField(max_length=10)
 
-#     class Meta: 
+#     class Meta:
 #         verbose_name = 'Checkout'
 #         verbose_name_plural = 'Checkcouts'
 
@@ -23,7 +23,7 @@ from django.db import models
 #     comment = models.TextField()
 #     total = models.FloatField()
 
-#     class Meta: 
+#     class Meta:
 #         verbose_name = 'Cart'
 #         verbose_name_plural = 'Carts'
 
@@ -35,13 +35,12 @@ from django.db import models
 #     checkout = models.ForeignKey(to=Checkout, on_delete=models.CASCADE)
 #     cart = models.ForeignKey(to=Cart, on_delete=models.CASCADE)
 
-#     class Meta: 
+#     class Meta:
 #         verbose_name = 'Order'
 #         verbose_name_plural = 'Orders'
 
 #     def __str__(self):
 #         return f'{self.checkout.name} {self.checkout.surname}, phone: {self.checkout.phone} - total: {self.cart.total}'
-
 
 
 class Checkout(models.Model):
@@ -53,7 +52,7 @@ class Checkout(models.Model):
     city = models.CharField(max_length=50)
     index = models.CharField(max_length=10)
 
-    class Meta: 
+    class Meta:
         verbose_name = 'Checkout'
         verbose_name_plural = 'Checkcouts'
 
@@ -65,9 +64,8 @@ class Cart(models.Model):
     productsCount = models.IntegerField()
     comment = models.TextField()
     total = models.FloatField()
-
-
-    class Meta: 
+    
+    class Meta:
         verbose_name = 'Cart'
         verbose_name_plural = 'Carts'
 
@@ -80,7 +78,7 @@ class Order(models.Model):
     checkout = models.ForeignKey(to=Checkout, on_delete=models.CASCADE)
     cart = models.ForeignKey(to=Cart, on_delete=models.CASCADE)
 
-    class Meta: 
+    class Meta:
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'
 
@@ -89,7 +87,8 @@ class Order(models.Model):
 
 
 class Product(models.Model):
-    cart = models.ForeignKey(Cart, related_name='products', on_delete=models.CASCADE)
+    cart = models.ForeignKey(
+        Cart, related_name='products', on_delete=models.CASCADE)
     # order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
     # unique_id = models.CharField(max_length=30)
     product_id = models.IntegerField()
@@ -101,7 +100,7 @@ class Product(models.Model):
     quantity = models.IntegerField()
     totalPrice = models.FloatField()
 
-    class Meta: 
+    class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
@@ -110,34 +109,30 @@ class Product(models.Model):
 
 
 
+# from django.contrib.auth.models import User
 
 
+# class Poll(models.Model):
+#     question = models.CharField(max_length=100)
+#     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
+#     pub_date = models.DateTimeField(auto_now=True)
+
+#     def __str__(self):
+#         return self.question
 
 
-from django.contrib.auth.models import User
+# class Choice(models.Model):
+#     poll = models.ForeignKey(Poll, related_name='choices', on_delete=models.CASCADE)
+#     choice_text = models.CharField(max_length=100)
+
+#     def __str__(self):
+#         return self.choice_text
 
 
-class Poll(models.Model):
-    question = models.CharField(max_length=100)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    pub_date = models.DateTimeField(auto_now=True)
+# class Vote(models.Model):
+#     choice = models.ForeignKey(Choice, related_name='votes', on_delete=models.CASCADE)
+#     poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
+#     voted_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.question
-
-
-class Choice(models.Model):
-    poll = models.ForeignKey(Poll, related_name='choices', on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.choice_text
-
-
-class Vote(models.Model):
-    choice = models.ForeignKey(Choice, related_name='votes', on_delete=models.CASCADE)
-    poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
-    voted_by = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    class Meta:
-        unique_together = ("poll", "voted_by")
+#     class Meta:
+#         unique_together = ("poll", "voted_by")
