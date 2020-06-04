@@ -25,7 +25,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
+    queryset = Order.objects.all().order_by("-pk")
     serializer_class = OrderSerializer
     # detail_serializer_class = OrderDetailSerializer
 
