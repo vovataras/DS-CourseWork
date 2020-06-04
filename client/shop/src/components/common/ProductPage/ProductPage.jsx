@@ -5,9 +5,7 @@ import { NavLink } from 'react-router-dom'
 const ProductPage = (props) => {
   // let imgLink = 'https://freesvg.org/img/Placeholder.png'
 
-
-  // TODO: get size from select element
-  let onAddProduct = () => {
+  let formNewProduct = () => {
     let newProduct = {
       unique_id: props.product.product_id + props.product.size,
       ...props.product,
@@ -16,8 +14,17 @@ const ProductPage = (props) => {
     }
     delete newProduct.description
 
-    // console.log(newProduct)
+    return newProduct
+  }
+
+  // TODO: get size from select element
+  let onAddProduct = () => {
+    let newProduct = formNewProduct()
     props.addProduct(newProduct)
+  }
+
+  let onBuyNow = () => {
+    props.buyNow(formNewProduct())
   }
 
   return (
@@ -52,7 +59,7 @@ const ProductPage = (props) => {
               <button onClick={onAddProduct} className={classes.add}>
                 Додати в кошик
               </button>
-              <button className={classes.buy}>Купити зараз</button>
+              <button onClick={onBuyNow} className={classes.buy}>Купити зараз</button>
             </div>
           </div>
         </div>

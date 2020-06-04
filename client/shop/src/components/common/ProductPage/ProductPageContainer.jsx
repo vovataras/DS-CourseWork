@@ -16,6 +16,11 @@ class ProductPageContainer extends React.Component {
     this.state = { data: {} }
   }
 
+  buyNow = (product) => {
+    this.props.addProduct(product)
+    this.props.history.push('/checkout')
+  }
+
   componentDidMount() {
     axios.get(this.api_url).then((response) => {
       this.setState({
@@ -26,7 +31,7 @@ class ProductPageContainer extends React.Component {
   }
 
   render() {
-    return <ProductPage {...this.props} product={this.state.data} />
+    return <ProductPage {...this.props} product={this.state.data} buyNow={this.buyNow} />
   }
 }
 
