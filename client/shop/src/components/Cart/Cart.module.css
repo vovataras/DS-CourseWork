@@ -1,0 +1,195 @@
+.cartPage {
+  width: 100%;
+  height: 100%;
+  /* background: gray; */
+  display: block;
+  border-top: 1px solid #e8e8e8;
+}
+
+.cartPage h2 {
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Times New Roman",Times,serif;
+  padding-top: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.emptyCart {
+  text-align: start;
+}
+
+.emptyCart a {
+  text-decoration: underline;
+}
+
+.emptyCart a:hover {
+  opacity: 0.8;
+}
+
+
+
+.productsHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-align: end;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.productH {
+  width: 55%;
+  text-align: start;
+}
+.priceH {
+  width: 15%;
+}
+.quantityH {
+  width: 15%;
+}
+.totalH {
+  width: 15%;
+}
+
+
+
+.productsContainer > div {
+  margin-bottom: 1.5rem;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.itemImage {
+  width: 20%;
+  text-align: start;
+}
+.itemImage:hover {
+  opacity: 0.8;
+}
+
+.itemDescription {
+  width: 35%;
+  padding: 0 1rem;
+  text-align: start;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.itemDescription h4{
+  padding: 0 0 0.5rem 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.itemDescription h4:hover{
+  opacity: 0.8;
+}
+
+.itemDescription .removeItem {
+  padding-top: 1rem;
+}
+.itemDescription .removeItem:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.itemPrice {
+  width: 15%;
+}
+
+.itemQuantity {
+  width: 15%;
+}
+.itemQuantity input{
+  color: #333;
+  font-size: 0.95rem;
+  width: 55px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: none;
+  padding: 0.7rem 0.5rem;
+}
+
+.itemTotal {
+  width: 15%;
+}
+
+
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.comment {
+  width: 49%;
+  text-align: start;
+  font-size: 0.8rem;
+}
+
+.comment label:hover {
+  cursor: pointer;
+}
+
+.comment textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 150px;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #f4f4f4;
+  border: none;
+  padding: 0.5rem;
+}
+
+.bill {
+  width: 49%;
+  text-align: end;
+}
+
+.totalPrice {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.buttons a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: solid 2px #333;
+}
+
+.buttons a:hover {
+  opacity: 0.8;
+}
+
+.btnContinue {
+  background-color: #FFF;
+  color: #333;
+}
+
+.btnCheckOut {
+  background-color: #333;
+  color: #FFF;
+}

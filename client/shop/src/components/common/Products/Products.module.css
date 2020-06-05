@@ -1,0 +1,10 @@
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.productsContainer a:hover img{
+  opacity: 0.75;
+}
